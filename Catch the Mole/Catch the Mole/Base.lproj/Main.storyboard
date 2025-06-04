@@ -34,6 +34,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Play Game"/>
+                                <connections>
+                                    <action selector="playButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zQf-tx-22x"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -41,6 +44,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Ubt-IP-PrR"/>
                     <connections>
+                        <outlet property="counterLabel" destination="8dX-LC-4E4" id="NkD-CR-VdP"/>
                         <segue destination="KJa-7H-NPE" kind="show" identifier="toGameVC" id="3FL-gO-5B1"/>
                     </connections>
                 </viewController>
@@ -111,6 +115,19 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="O95-9O-ZTe"/>
+                    <connections>
+                        <outlet property="counterLabel" destination="13P-a3-CzN" id="gsB-nR-aoQ"/>
+                        <outlet property="imageView0" destination="X3E-5O-dni" id="A8I-wF-uL7"/>
+                        <outlet property="imageView1" destination="d6W-IT-BSK" id="Smc-Xx-Aiu"/>
+                        <outlet property="imageView2" destination="kay-p6-hF1" id="W59-om-x1I"/>
+                        <outlet property="imageView3" destination="cnD-sy-iTl" id="en9-sp-3GQ"/>
+                        <outlet property="imageView4" destination="V6f-Re-ywU" id="3V6-zQ-kDK"/>
+                        <outlet property="imageView5" destination="CEx-VE-RCE" id="W8X-l9-8Se"/>
+                        <outlet property="imageView6" destination="45h-dA-KpO" id="qUz-Ag-5X0"/>
+                        <outlet property="imageView7" destination="AcS-hJ-cLC" id="o6Y-GD-0zC"/>
+                        <outlet property="imageView8" destination="nlb-Y5-afc" id="yxN-ro-6VI"/>
+                        <outlet property="scoreLabel" destination="nIA-oM-wFj" id="Nl0-Jw-F3l"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UxP-pO-BQ7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
