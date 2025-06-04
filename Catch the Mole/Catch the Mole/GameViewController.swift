@@ -40,6 +40,10 @@ class GameViewController: UIViewController {
     @objc func countDown(){
         counter -= 1
         counterLabel.text = "Counter: \(counter)"
+        
+        if counter <= 0 {
+            countDownTimer.invalidate()
+        }
     }
 
 }
