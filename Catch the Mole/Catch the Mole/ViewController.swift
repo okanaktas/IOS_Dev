@@ -18,9 +18,13 @@ class ViewController: UIViewController {
     }
 
     @IBAction func playButton(_ sender: Any) {
-        
-        performSegue(withIdentifier: "playGame", sender: self)
-        
+        performSegue(withIdentifier: "toGameVC", sender: self)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toGameVC" {
+            let destinationVC = segue.destination as! GameViewController
+            destinationVC.counter = Int(counterLabel.text ?? "30") ?? 30
+        }
     }
     
 }

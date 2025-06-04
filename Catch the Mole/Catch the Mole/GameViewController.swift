@@ -9,7 +9,9 @@ import UIKit
 
 class GameViewController: UIViewController {
     
-    var counter = 30
+    var counter : Int = 30
+    
+    var countDownTimer = Timer()
 
     @IBOutlet weak var counterLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
@@ -27,10 +29,17 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        counterLabel.text = "Counter: \(counter)"
+        
+        countDownTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(countDown), userInfo: nil, repeats: true)
         
         
         
-        
+    }
+    
+    @objc func countDown(){
+        counter -= 1
+        counterLabel.text = "Counter: \(counter)"
     }
 
 }
