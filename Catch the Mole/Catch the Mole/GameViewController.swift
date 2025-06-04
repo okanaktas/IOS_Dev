@@ -10,6 +10,9 @@ import UIKit
 class GameViewController: UIViewController {
     
     var counter : Int = 30
+    var score : Int = 0
+    
+    var imageViewArray : [UIImageView] = []
     
     var countDownTimer = Timer()
 
@@ -28,10 +31,18 @@ class GameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        imageViewArray = [imageView0, imageView1, imageView2, imageView3, imageView4, imageView5, imageView6, imageView7, imageView8]
+        
         counterLabel.text = "Counter: \(counter)"
         
         countDownTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(countDown), userInfo: nil, repeats: true)
+        
+        for i in imageViewArray {
+            i.isUserInteractionEnabled = true
+            let recognizer = UITapGestureRecognizer(target: self, action: #selector(increaseScore))
+            i.addGestureRecognizer(recognizer)
+        }
         
         
         
@@ -44,6 +55,11 @@ class GameViewController: UIViewController {
         if counter <= 0 {
             countDownTimer.invalidate()
         }
+    }
+    
+    @objc func increaseScore(){
+        score += 1
+        scoreLabel.text = "Score: \(score)"
     }
 
 }
