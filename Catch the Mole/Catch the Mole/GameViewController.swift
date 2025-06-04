@@ -65,6 +65,10 @@ class GameViewController: UIViewController {
             let okButton = UIAlertAction(title: "Ok", style: UIAlertAction.Style.cancel, handler: nil)
             alert.addAction(okButton)
             self.present(alert, animated: true, completion: nil)
+            
+            for i in imageViewArray{
+                i.isHidden = true
+            }
         }
     }
     
