@@ -11,11 +11,13 @@ class GameViewController: UIViewController {
     
     var counter : Int = 30
     var score : Int = 0
+    var randomNumber : Int = 0
     
     var imageViewArray : [UIImageView] = []
     
     var countDownTimer = Timer()
-
+    var showRandomImages = Timer()
+    
     @IBOutlet weak var counterLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
     
@@ -37,12 +39,18 @@ class GameViewController: UIViewController {
         counterLabel.text = "Counter: \(counter)"
         
         countDownTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(countDown), userInfo: nil, repeats: true)
+        showRandomImages = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(showRandomImage), userInfo: nil, repeats: true)
         
         for i in imageViewArray {
             i.isUserInteractionEnabled = true
             let recognizer = UITapGestureRecognizer(target: self, action: #selector(increaseScore))
             i.addGestureRecognizer(recognizer)
+            
+            i.isHidden = true
+            
         }
+        
+        
         
         
         
@@ -61,5 +69,15 @@ class GameViewController: UIViewController {
         score += 1
         scoreLabel.text = "Score: \(score)"
     }
-
+    
+    @objc func showRandomImage(){
+        for i in imageViewArray{
+            i.isHidden = true
+        }
+        
+        randomNumber = Int(arc4random_uniform(UInt32(imageViewArray.count)))
+        imageViewArray[randomNumber].isHidden = false
+        
+    }
+    
 }
