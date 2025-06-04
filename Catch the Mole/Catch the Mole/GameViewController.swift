@@ -51,9 +51,6 @@ class GameViewController: UIViewController {
         }
         
         
-        
-        
-        
     }
     
     @objc func countDown(){
@@ -62,6 +59,12 @@ class GameViewController: UIViewController {
         
         if counter <= 0 {
             countDownTimer.invalidate()
+            showRandomImages.invalidate()
+            
+            let alert = UIAlertController(title: "Time's up!", message: "Do you wanna play again?", preferredStyle: UIAlertController.Style.alert)
+            let okButton = UIAlertAction(title: "Ok", style: UIAlertAction.Style.cancel, handler: nil)
+            alert.addAction(okButton)
+            self.present(alert, animated: true, completion: nil)
         }
     }
     
