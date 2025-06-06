@@ -30,6 +30,9 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="B6p-iU-GmQ" secondAttribute="trailing" id="gtj-sE-DpP"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="B6p-iU-GmQ" id="cjD-lj-cmM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -72,6 +75,12 @@
                         <viewLayoutGuide key="safeArea" id="6JQ-0U-lwz"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="ageLabel" destination="hs9-QR-TFD" id="XvJ-tA-QHS"/>
+                        <outlet property="imageView" destination="kGP-e8-yCx" id="7gL-NN-WBT"/>
+                        <outlet property="jobLabel" destination="wxG-BT-9tB" id="rDT-un-Q13"/>
+                        <outlet property="nameLabel" destination="5JW-RW-kCp" id="Vm6-Qi-ivM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VQq-ny-mDv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
