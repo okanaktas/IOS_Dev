@@ -71,6 +71,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
     
+    //tableViewCommit diye aratıyorum ve editingStyle diye bir şey veriyor bizde
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete{
+            //at: hangi indexten sileyim diye soruyor o da indexPath olarak seçilen veriliyor.
+            self.personList.remove(at: indexPath.row)
+            //Bunları personList'ten siliyorum ama gösterilen tableView'da duracak bu yüzden bu yüzden ya tableView.reloadData() diyip tableView'ı güncelliyoruz ki bu tüm tableView'ı günceller ve verimsiz olur yada sadece sileceğimiz kısmı tableView'dan da sileriz:
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
+    
     
 }
 

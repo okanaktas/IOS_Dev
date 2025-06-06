@@ -30,8 +30,6 @@ class DetailsViewController: UIViewController {
         imageView.image = selectedImage
         
         
-        
-        
     }
 
 }
