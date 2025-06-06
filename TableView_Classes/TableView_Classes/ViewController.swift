@@ -11,6 +11,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     var personList : [Person] = []
     
+    var choosenName = ""
+    var choosenJob = ""
+    var choosenAge = 0
+    var choosenImage = UIImage()
+    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -28,7 +33,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        personList.count - 1
+        personList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -42,6 +47,28 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         //yeni oluşturduğumuz contenti cell'e eşitliyorum
         cell.contentConfiguration = content
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //segue yapmadan önce hangisi seçildiyse o değerleri aktarma yapıyorum
+        choosenName = personList[indexPath.row].name!
+        choosenJob = personList[indexPath.row].job!
+        choosenAge = personList[indexPath.row].age!
+        choosenImage = personList[indexPath.row].image!
+        
+        performSegue(withIdentifier: "toDetailsVC", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toDetailsVC"{
+            let destinationVC = segue.destination as! DetailsViewController
+            
+            //Burada seçilen değeri göndereceğiz fakat seçilen değeri bilmiyoruz. Bunu da perform içerisinde yapacağız çünkü indexPath olarak hangisinin seçildiği bilgisi bana veriliyor. En yukarıda choosenName... olarak hepsini tanımladım ki her yerden ulaşabileyim diye
+            destinationVC.selectedName = choosenName
+            destinationVC.selectedJob = choosenJob
+            destinationVC.selectedAge = choosenAge
+            destinationVC.selectedImage = choosenImage
+        }
     }
     
     

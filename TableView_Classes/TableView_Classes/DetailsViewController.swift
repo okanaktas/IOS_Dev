@@ -8,6 +8,11 @@
 import UIKit
 
 class DetailsViewController: UIViewController {
+    
+    var selectedName = "Name: "
+    var selectedJob = "Job: "
+    var selectedAge = 0
+    var selectedImage = UIImage()
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
@@ -18,7 +23,11 @@ class DetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        nameLabel.text = "Name: \(selectedName)"
+        jobLabel.text = "Job: \(selectedJob)"
+        ageLabel.text = "Age: \(selectedAge)"
         
+        imageView.image = selectedImage
         
         
         

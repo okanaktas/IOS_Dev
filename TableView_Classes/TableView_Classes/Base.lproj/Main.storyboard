@@ -32,6 +32,7 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="B6p-iU-GmQ" id="cjD-lj-cmM"/>
+                        <segue destination="dxN-Af-UYV" kind="show" identifier="toDetailsVC" id="bOB-TR-Cxv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -43,7 +44,7 @@
             <objects>
                 <viewController id="dxN-Af-UYV" customClass="DetailsViewController" customModule="TableView_Classes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4y2-wO-jPF">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kGP-e8-yCx">
@@ -75,6 +76,7 @@
                         <viewLayoutGuide key="safeArea" id="6JQ-0U-lwz"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="O6q-Dc-sO8"/>
                     <connections>
                         <outlet property="ageLabel" destination="hs9-QR-TFD" id="XvJ-tA-QHS"/>
                         <outlet property="imageView" destination="kGP-e8-yCx" id="7gL-NN-WBT"/>
