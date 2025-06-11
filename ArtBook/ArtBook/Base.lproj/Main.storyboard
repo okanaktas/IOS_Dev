@@ -34,6 +34,7 @@
                     <connections>
                         <outlet property="tableView" destination="hQX-lf-7NO" id="hP2-3d-H3s"/>
                         <segue destination="psX-xj-Jec" kind="show" identifier="toDetailsVC" id="kSv-Sj-gRJ"/>
+                        <segue destination="4zT-50-kby" kind="show" identifier="toSavedVC" id="5JG-P0-1va"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -124,7 +125,80 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GRu-l9-FeK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1794.6564885496182" y="-27.464788732394368"/>
+            <point key="canvasLocation" x="1795" y="-392"/>
+        </scene>
+        <!--Saved View Controller-->
+        <scene sceneID="kFp-mD-b2e">
+            <objects>
+                <viewController id="4zT-50-kby" customClass="SavedViewController" customModule="ArtBook" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pFZ-D4-EvI">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GCN-y7-7q2">
+                                <rect key="frame" x="76" y="214" width="241" height="153"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="153" id="Teh-3v-GAQ"/>
+                                    <constraint firstAttribute="width" constant="241" id="qZc-HD-ked"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ksT-iF-eBJ">
+                                <rect key="frame" x="114" y="422" width="164" height="43"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="43" id="LfM-Yz-dvL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Artist:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xTd-6m-l5O">
+                                <rect key="frame" x="114" y="473" width="164" height="43"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="43" id="0pI-KF-59u"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Year:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PLe-Sp-5R0">
+                                <rect key="frame" x="114" y="524" width="164" height="43"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="43" id="Uga-Dw-qpb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="M6y-22-4La"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="PLe-Sp-5R0" firstAttribute="top" secondItem="xTd-6m-l5O" secondAttribute="bottom" constant="8" id="1ve-3X-Erv"/>
+                            <constraint firstItem="ksT-iF-eBJ" firstAttribute="leading" secondItem="xTd-6m-l5O" secondAttribute="leading" id="Clw-uu-aTM"/>
+                            <constraint firstItem="GCN-y7-7q2" firstAttribute="centerX" secondItem="ksT-iF-eBJ" secondAttribute="centerX" id="Gz1-kq-mmo"/>
+                            <constraint firstItem="xTd-6m-l5O" firstAttribute="top" secondItem="ksT-iF-eBJ" secondAttribute="bottom" constant="8" id="LeW-aD-TBT"/>
+                            <constraint firstItem="GCN-y7-7q2" firstAttribute="leading" secondItem="M6y-22-4La" secondAttribute="leading" constant="76" id="UNi-pH-pNV"/>
+                            <constraint firstItem="GCN-y7-7q2" firstAttribute="top" secondItem="M6y-22-4La" secondAttribute="top" constant="52" id="VLY-GA-zLX"/>
+                            <constraint firstItem="M6y-22-4La" firstAttribute="bottom" secondItem="PLe-Sp-5R0" secondAttribute="bottom" constant="217" id="kvV-17-eAY"/>
+                            <constraint firstItem="ksT-iF-eBJ" firstAttribute="leading" secondItem="M6y-22-4La" secondAttribute="leading" constant="114" id="nxt-IF-vTX"/>
+                            <constraint firstItem="ksT-iF-eBJ" firstAttribute="top" secondItem="GCN-y7-7q2" secondAttribute="bottom" constant="55" id="pPk-1C-PGv"/>
+                            <constraint firstItem="xTd-6m-l5O" firstAttribute="trailing" secondItem="PLe-Sp-5R0" secondAttribute="trailing" id="tUG-Hu-NJT"/>
+                            <constraint firstItem="GCN-y7-7q2" firstAttribute="centerX" secondItem="pFZ-D4-EvI" secondAttribute="centerX" id="vj0-hT-pBa"/>
+                            <constraint firstItem="ksT-iF-eBJ" firstAttribute="trailing" secondItem="xTd-6m-l5O" secondAttribute="trailing" id="zPk-Vf-E8A"/>
+                            <constraint firstItem="xTd-6m-l5O" firstAttribute="leading" secondItem="PLe-Sp-5R0" secondAttribute="leading" id="zUo-7c-sWf"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="TK7-UU-jKy"/>
+                    <connections>
+                        <outlet property="artistLabel" destination="xTd-6m-l5O" id="DLK-q9-tNF"/>
+                        <outlet property="imageView" destination="GCN-y7-7q2" id="F2X-Gg-LQ1"/>
+                        <outlet property="nameLabel" destination="ksT-iF-eBJ" id="EbG-YN-Mt1"/>
+                        <outlet property="yearLabel" destination="PLe-Sp-5R0" id="2kY-gp-hgv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QZL-uL-BO5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1841.9847328244275" y="287.32394366197184"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Zad-U6-sFw">

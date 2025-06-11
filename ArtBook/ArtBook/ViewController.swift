@@ -16,6 +16,8 @@ class ViewController: UIViewController , UITableViewDelegate,UITableViewDataSour
     var nameArray : [String] = []
     var idArray : [UUID] = []
     
+    var savedName = ""
+    var savedUUID : UUID?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,16 +70,18 @@ class ViewController: UIViewController , UITableViewDelegate,UITableViewDataSour
         do{
          let results = try context.fetch(fetchRequest)
             //Burada NSManagedObject'e casting yapıyoruz ki çekilen değerleri tek tek ele alabileyim. NSManagedObject: Core Data’daki kayıtları temsil eder.
-            for result in results as! [NSManagedObject] {
-                if let name = result.value(forKey: "name") as? String{
-                    self.nameArray.append(name)
+            if results.count > 0{
+                for result in results as! [NSManagedObject] {
+                    if let name = result.value(forKey: "name") as? String{
+                        self.nameArray.append(name)
+                    }
+                    if let id = result.value(forKey: "id") as? UUID{
+                        self.idArray.append(id)
+                    }
+                    
+                    //Burada data geldiği için tableView'ı reload yapmam gerek
+                    self.tableView.reloadData()
                 }
-                if let id = result.value(forKey: "id") as? UUID{
-                    self.idArray.append(id)
-                }
-                
-                //Burada data geldiği için tableView'ı reload yapmam gerek
-                self.tableView.reloadData()
             }
         }catch{
             print("Error")
@@ -100,7 +104,16 @@ class ViewController: UIViewController , UITableViewDelegate,UITableViewDataSour
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "toDetailsVC", sender: nil)
+        savedName = nameArray[indexPath.row]
+        savedUUID = idArray[indexPath.row]
+        performSegue(withIdentifier: "toSavedVC", sender: nil)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toSavedVC" {
+            let destinationVC = segue.destination as! SavedViewController
+            destinationVC.savedName = savedName
+            destinationVC.savedUUID = savedUUID
+        }
     }
 
 
