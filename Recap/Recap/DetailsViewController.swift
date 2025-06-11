@@ -8,6 +8,10 @@
 import UIKit
 
 class DetailsViewController: UIViewController {
+    
+    var image : UIImage?
+    var name : String?
+    var birthday : String?
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
@@ -15,8 +19,9 @@ class DetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
-        
+        imageView.image = image
+        nameLabel.text = name
+        birthdayLabel.text = birthday
         
     }
 

@@ -23,8 +23,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         tableView.delegate = self
         
         
-        var okan = Person(image: UIImage(systemName: "person.circle")!, name: "Okan", birthday: 96)
-        var berkay = Person(image: UIImage(systemName: "car.fill")!, name: "Berkay", birthday: 13)
+        let okan = Person(image: UIImage(systemName: "person.circle")!, name: "Okan", birthday: 96)
+        let berkay = Person(image: UIImage(systemName: "car.fill")!, name: "Berkay", birthday: 13)
         
         personArray = [okan, berkay]
         
@@ -42,6 +42,18 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         content.secondaryText = "\(personArray[indexPath.row].birthday)"
         cell.contentConfiguration = content
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "toDetailsVC", sender: self)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toDetailsVC" {
+            let destinationVC = segue.destination as! DetailsViewController
+            destinationVC.image = personArray[tableView.indexPathForSelectedRow!.row].image
+            destinationVC.name = personArray[tableView.indexPathForSelectedRow!.row].name
+            destinationVC.birthday = "\(personArray[tableView.indexPathForSelectedRow!.row].birthday)"
+        }
     }
 
 }

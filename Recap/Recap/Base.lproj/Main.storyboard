@@ -32,7 +32,7 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="rMp-4S-qW2" id="fJw-zJ-CTF"/>
-                        <segue destination="HCh-UT-Qh3" kind="show" id="fDe-LD-2fY"/>
+                        <segue destination="HCh-UT-Qh3" kind="show" identifier="toDetailsVC" id="fDe-LD-2fY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
