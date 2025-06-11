@@ -8,13 +8,16 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet weak var counterLabel: UITextField!
+    @IBOutlet weak var highScoreLabel: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        let highScore = UserDefaults.standard.integer(forKey: "highScore")
+        highScoreLabel.text = "High Score: \(highScore)"
     }
 
     @IBAction func playButton(_ sender: Any) {

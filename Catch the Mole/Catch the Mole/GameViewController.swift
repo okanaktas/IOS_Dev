@@ -13,6 +13,8 @@ class GameViewController: UIViewController {
     var score : Int = 0
     var randomNumber : Int = 0
     
+    var highScore = 0
+    
     var imageViewArray : [UIImageView] = []
     
     var countDownTimer = Timer()
@@ -34,9 +36,12 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        highScore = UserDefaults.standard.integer(forKey: "highScore")
+        
         imageViewArray = [imageView0, imageView1, imageView2, imageView3, imageView4, imageView5, imageView6, imageView7, imageView8]
         
         counterLabel.text = "Counter: \(counter)"
+        
         
         countDownTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(countDown), userInfo: nil, repeats: true)
         showRandomImages = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(showRandomImage), userInfo: nil, repeats: true)
@@ -62,12 +67,30 @@ class GameViewController: UIViewController {
             showRandomImages.invalidate()
             
             let alert = UIAlertController(title: "Time's up!", message: "Do you wanna play again?", preferredStyle: UIAlertController.Style.alert)
-            let okButton = UIAlertAction(title: "Ok", style: UIAlertAction.Style.cancel, handler: nil)
+            let okButton = UIAlertAction(title: "Ok", style: UIAlertAction.Style.cancel,handler: nil)
+            let replayButton = UIAlertAction(title: "Replay ?", style: UIAlertAction.Style.default) { UIAlertAction in
+                
+                self.counter = 30
+                self.score = 0
+                
+                self.counterLabel.text = "Counter: \(self.counter)"
+                self.scoreLabel.text = "Score: \(self.score)"
+                
+                self.countDownTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.countDown), userInfo: nil, repeats: true)
+                self.showRandomImages = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(self.showRandomImage), userInfo: nil, repeats: true)
+                
+                
+            }
             alert.addAction(okButton)
+            alert.addAction(replayButton)
             self.present(alert, animated: true, completion: nil)
             
             for i in imageViewArray{
                 i.isHidden = true
+            }
+            if score > highScore{
+                highScore = score
+                UserDefaults.standard.set(highScore, forKey: "highScore")
             }
         }
     }
