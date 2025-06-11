@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DetailsViewController: UIViewController , UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+class DetailsViewController: UIViewController , UIImagePickerControllerDelegate , UINavigationControllerDelegate{
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var nameText: UITextField!
@@ -42,8 +42,20 @@ class DetailsViewController: UIViewController , UIImagePickerControllerDelegate,
     }
     
     @objc func selectImage(){
+        //Fotoğraflara erişebilmek için picker tanımlıyoruz
         let picker = UIImagePickerController()
         picker.delegate = self
+        picker.sourceType = .photoLibrary
+        //Kullanıcın seçtiği görsele edit yapabilmesi için
+        picker.allowsEditing = true
+        present(picker, animated: true)
+    }
+    //Kullanıcı görseli seçtikten sonra ne olacağını yazmak için didFinishPicker yazıyorum
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        //bana any döndürüyor casting yapıyorum as ile UIImage a çevirmesi için. Normalde originalImage kullanılabilir fakat editleyebilsin diy kullanıcı .editedImage kullandım
+        imageView.image = info[.editedImage] as? UIImage
+        //açılan picker'ı kapatmak için self.dismiss. completion -> kapatılınca bir şey yapılmasını istiyorsak oraya yazıyoruz.
+        self.dismiss(animated: true, completion: nil)
     }
     
     
