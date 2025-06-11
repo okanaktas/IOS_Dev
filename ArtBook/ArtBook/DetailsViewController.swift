@@ -9,7 +9,7 @@ import UIKit
 import CoreData
 
 class DetailsViewController: UIViewController , UIImagePickerControllerDelegate , UINavigationControllerDelegate{
-
+    
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var nameText: UITextField!
     @IBOutlet weak var artistText: UITextField!
@@ -19,7 +19,7 @@ class DetailsViewController: UIViewController , UIImagePickerControllerDelegate 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         
         //Recognizers
         //For hidden keyboard
@@ -31,7 +31,7 @@ class DetailsViewController: UIViewController , UIImagePickerControllerDelegate 
         imageView.addGestureRecognizer(imageRecognizer)
         
     }
-
+    
     @IBAction func saveButton(_ sender: Any) {
         
         //Aynı userdefault gibi UIApplication.shared diyince tüm dosyalardan erişebiliyorum.
@@ -41,7 +41,20 @@ class DetailsViewController: UIViewController , UIImagePickerControllerDelegate 
         //context içeisine ne koyacağımı yazıyorum
         let newPainting = NSEntityDescription.insertNewObject(forEntityName: "Paintings", into: context)
         
-        //
+        //Attributes
+        newPainting.setValue(nameText.text, forKey: "name")
+        newPainting.setValue(artistText.text, forKey: "artist")
+        
+        if let year = Int(yearText.text!){
+            newPainting.setValue(year, forKey: "year")
+        }
+        
+        newPainting.setValue(UUID(), forKey: "id")
+      
+        //Görseli data çeviriyoruz.
+        let data = imageView.image.?.jpegData(compressionQuality: 0.8)!
+        
+        
     }
     
     @objc func hideKeyboard(){
