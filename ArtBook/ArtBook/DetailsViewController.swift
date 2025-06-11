@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DetailsViewController: UIViewController {
+class DetailsViewController: UIViewController , UIImagePickerControllerDelegate, UINavigationControllerDelegate{
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var nameText: UITextField!
@@ -20,9 +20,14 @@ class DetailsViewController: UIViewController {
         super.viewDidLoad()
 
         
-
+        //Recognizers
+        //For hidden keyboard
         let recognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         view.addGestureRecognizer(recognizer)
+        //For selectImage
+        imageView.isUserInteractionEnabled = true
+        let imageRecognizer = UITapGestureRecognizer(target: self, action: #selector(selectImage))
+        imageView.addGestureRecognizer(imageRecognizer)
         
     }
 
@@ -34,6 +39,11 @@ class DetailsViewController: UIViewController {
     @objc func hideKeyboard(){
         //o view içerisinde yapılan değişiklikleri bitiriyor
         view.endEditing(true)
+    }
+    
+    @objc func selectImage(){
+        let picker = UIImagePickerController()
+        picker.delegate = self
     }
     
     
