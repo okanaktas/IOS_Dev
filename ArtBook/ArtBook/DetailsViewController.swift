@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class DetailsViewController: UIViewController , UIImagePickerControllerDelegate , UINavigationControllerDelegate{
 
@@ -33,7 +34,14 @@ class DetailsViewController: UIViewController , UIImagePickerControllerDelegate 
 
     @IBAction func saveButton(_ sender: Any) {
         
+        //Aynı userdefault gibi UIApplication.shared diyince tüm dosyalardan erişebiliyorum.
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
         
+        //context içeisine ne koyacağımı yazıyorum
+        let newPainting = NSEntityDescription.insertNewObject(forEntityName: "Paintings", into: context)
+        
+        //
     }
     
     @objc func hideKeyboard(){
