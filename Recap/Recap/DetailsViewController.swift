@@ -8,21 +8,23 @@
 import UIKit
 
 class DetailsViewController: UIViewController {
-    
-    var image : UIImage?
-    var name : String?
-    var birthday : String?
 
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var birthdayLabel: UILabel!
+    @IBOutlet weak var nameText: UITextField!
+    @IBOutlet weak var artistText: UITextField!
+    @IBOutlet weak var yearText: UITextField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        imageView.image = image
-        nameLabel.text = name
-        birthdayLabel.text = birthday
+        
+        
         
     }
-
+    
+    
+    
+    @IBAction func saveButton(_ sender: Any) {
+    }
 }
