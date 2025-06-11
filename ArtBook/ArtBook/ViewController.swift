@@ -9,9 +9,20 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var tableView: UITableView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        
+        navigationController?.navigationBar.topItem?.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addImageButton))
+        
+        
+    }
+    
+    @objc func addImageButton() {
+        performSegue(withIdentifier: "toDetailsVC", sender: nil)
     }
 
 
