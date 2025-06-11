@@ -51,8 +51,17 @@ class DetailsViewController: UIViewController , UIImagePickerControllerDelegate 
         
         newPainting.setValue(UUID(), forKey: "id")
       
-        //Görseli data çeviriyoruz.
-        let data = imageView.image.?.jpegData(compressionQuality: 0.8)!
+        //Görseli data çeviriyoruz. ve compressionQuality dediği kısım görselin ne kadarını sıkıştırayım ?
+        let data = imageView.image?.jpegData(compressionQuality: 0.8)!
+        
+        newPainting.setValue(data, forKey: "image")
+        
+        do{
+            try context.save()
+            print("Success")
+        }catch{
+            print("Error")
+        }
         
         
     }
