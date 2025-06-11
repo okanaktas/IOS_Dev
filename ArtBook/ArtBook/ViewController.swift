@@ -28,7 +28,17 @@ class ViewController: UIViewController , UITableViewDelegate,UITableViewDataSour
         getData()
     }
     
-    func getData(){
+    //viewDidLoad sadece app ilk kez açıldığında çalışıyordu fakat biz NotificationCenter diye Details içerisinden mesaj gönderdik ve onu almamız gerek değişiklik olduğu için bu yüzden bunu viewWillAppear içerisinde yapacğaız çünkü viewWillAppear her Bu VC açıldığında çalışıyor.
+    override func viewWillAppear(_ animated: Bool) {
+        NotificationCenter.default.addObserver(self, selector: #selector(getData), name: NSNotification.Name("reloadData"), object: nil)
+    }
+    
+    @objc func getData(){
+        
+        //CoreData'da bir kere gözükmesine rağmen NotificationCenter yüzünden dizi içerisine iki kere veri çekmiş oluyorum ve tableView'da datalar iki kere gözüküyor bu yüzden
+        nameArray.removeAll(keepingCapacity: false)
+        idArray.removeAll(keepingCapacity: false)
+        
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context =  appDelegate.persistentContainer.viewContext
         

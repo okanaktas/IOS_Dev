@@ -63,6 +63,12 @@ class DetailsViewController: UIViewController , UIImagePickerControllerDelegate 
             print("Error")
         }
         
+        //Diğer VC'lara mesaj yollamama olanak sağlıyor. Burada reloadData diye bir mesaj gönderiyorum ve diğer VC'den reloadData diye bir mesaj geldiğinde ne yapacağımı yazacağım.
+        NotificationCenter.default.post(name: NSNotification.Name("reloadData"), object: nil)
+        
+        //Bir önceki sayfaya gitmek için
+        self.navigationController?.popViewController(animated: true)
+        
         
     }
     
