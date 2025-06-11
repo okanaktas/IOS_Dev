@@ -19,8 +19,15 @@ class DetailsViewController: UIViewController {
         super.viewDidLoad()
 
         
+        let recognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        view.addGestureRecognizer(recognizer)
         
         
+        
+    }
+    
+    @objc func hideKeyboard(){
+        view.endEditing(true)
     }
     
     
