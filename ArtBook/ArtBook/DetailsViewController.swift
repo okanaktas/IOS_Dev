@@ -20,13 +20,20 @@ class DetailsViewController: UIViewController {
         super.viewDidLoad()
 
         
-        
+
+        let recognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        view.addGestureRecognizer(recognizer)
         
     }
 
     @IBAction func saveButton(_ sender: Any) {
         
         
+    }
+    
+    @objc func hideKeyboard(){
+        //o view içerisinde yapılan değişiklikleri bitiriyor
+        view.endEditing(true)
     }
     
     

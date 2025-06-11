@@ -48,31 +48,44 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="photo.badge.plus" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="nFr-xw-yDs">
-                                <rect key="frame" x="78" y="163.66666666666663" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo.badge.plus" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="nFr-xw-yDs">
+                                <rect key="frame" x="78" y="163.66666666666666" width="240" height="127.99999999999997"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="128.33000000000001" id="9Nt-v2-eft"/>
+                                    <constraint firstAttribute="width" constant="237.33000000000001" id="Gm9-yZ-ign"/>
+                                    <constraint firstAttribute="height" constant="128.33000000000001" id="Lgb-Mj-nAP"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="237.33000000000001" id="lwJ-Es-EhL"/>
+                                </constraints>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5nX-mZ-p1h">
-                                <rect key="frame" x="99" y="375.66666666666663" width="195" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5nX-mZ-p1h">
+                                <rect key="frame" x="99.000000000000014" y="375.66666666666669" width="195.33333333333337" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="OOA-dh-pE8"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Artist:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r2g-zq-jps">
-                                <rect key="frame" x="101" y="417.66666666666663" width="195" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Artist:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r2g-zq-jps">
+                                <rect key="frame" x="101.00000000000001" y="417.66666666666669" width="195.33333333333337" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="A0I-QH-jDr"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Year:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vTw-VT-Vvk">
-                                <rect key="frame" x="101" y="459.66666666666663" width="195" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Year:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vTw-VT-Vvk">
+                                <rect key="frame" x="101.00000000000001" y="459.66666666666669" width="195.33333333333337" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="Lhy-eD-vvQ"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NYN-mF-TZ9">
-                                <rect key="frame" x="123" y="517.66666666666663" width="147" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NYN-mF-TZ9">
+                                <rect key="frame" x="123.00000000000001" y="517.66666666666663" width="147.33333333333337" height="34.333333333333371"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="XoQ-p6-gmn"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Save"/>
                                 <connections>
@@ -82,6 +95,24 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fSQ-AG-b37"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="fSQ-AG-b37" firstAttribute="bottom" secondItem="NYN-mF-TZ9" secondAttribute="bottom" constant="206.33333333333337" id="CeB-Dj-GWb"/>
+                            <constraint firstItem="r2g-zq-jps" firstAttribute="leading" secondItem="fSQ-AG-b37" secondAttribute="leading" constant="101" id="Etq-3M-UKt"/>
+                            <constraint firstItem="5nX-mZ-p1h" firstAttribute="leading" secondItem="fSQ-AG-b37" secondAttribute="leading" constant="99" id="HK3-Uz-smm"/>
+                            <constraint firstItem="NYN-mF-TZ9" firstAttribute="leading" secondItem="fSQ-AG-b37" secondAttribute="leading" constant="123" id="Kkl-3d-KZL"/>
+                            <constraint firstItem="NYN-mF-TZ9" firstAttribute="top" secondItem="vTw-VT-Vvk" secondAttribute="bottom" constant="24" id="U27-0h-np2"/>
+                            <constraint firstItem="r2g-zq-jps" firstAttribute="trailing" secondItem="vTw-VT-Vvk" secondAttribute="trailing" id="UZc-7k-F7w"/>
+                            <constraint firstItem="nFr-xw-yDs" firstAttribute="centerX" secondItem="5nX-mZ-p1h" secondAttribute="centerX" id="WxP-Dt-2d6"/>
+                            <constraint firstItem="fSQ-AG-b37" firstAttribute="trailing" secondItem="r2g-zq-jps" secondAttribute="trailing" constant="97" id="gll-yN-n13"/>
+                            <constraint firstItem="nFr-xw-yDs" firstAttribute="leading" secondItem="fSQ-AG-b37" secondAttribute="leading" constant="78" id="h9I-bI-HJr"/>
+                            <constraint firstItem="5nX-mZ-p1h" firstAttribute="centerX" secondItem="NYN-mF-TZ9" secondAttribute="centerX" id="jNU-VV-rBA"/>
+                            <constraint firstItem="r2g-zq-jps" firstAttribute="top" secondItem="5nX-mZ-p1h" secondAttribute="bottom" constant="8" id="nZ1-g6-uJk"/>
+                            <constraint firstItem="nFr-xw-yDs" firstAttribute="centerX" secondItem="JGe-BN-2Dl" secondAttribute="centerX" id="thO-a0-lOr"/>
+                            <constraint firstItem="nFr-xw-yDs" firstAttribute="top" secondItem="JGe-BN-2Dl" secondAttribute="topMargin" constant="-2.8421709430404007e-14" id="uN8-qw-gsF"/>
+                            <constraint firstItem="r2g-zq-jps" firstAttribute="leading" secondItem="vTw-VT-Vvk" secondAttribute="leading" id="uQn-H9-D6L"/>
+                            <constraint firstItem="vTw-VT-Vvk" firstAttribute="top" secondItem="r2g-zq-jps" secondAttribute="bottom" constant="8" id="yP8-NO-vzo"/>
+                            <constraint firstItem="5nX-mZ-p1h" firstAttribute="top" secondItem="nFr-xw-yDs" secondAttribute="bottom" constant="85.333333333333371" id="z9h-Yh-wlu"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="lph-Vw-YiZ"/>
                     <connections>
