@@ -78,7 +78,11 @@ class GameViewController: UIViewController {
             self.present(alert, animated: true)
             
             //Bu alanda süre bittikten sonra score'u ViewController'a göndermek istiyorum fakat daha önce bir highScore var ise ViewController'da karşıaştırsın ve yüksek olanı kaydetsin
-            UserDefaults.standard.set(self.score, forKey: "highScore")
+            if score > highScore{
+                highScore = score
+                UserDefaults.standard.set(self.highScore, forKey: "highScore")
+            }
+            
         }
     }
     

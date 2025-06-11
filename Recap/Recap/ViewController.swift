@@ -15,7 +15,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        UserDefaults.standard.object(forKey: <#T##String#>)
+        let lastHighScore = UserDefaults.standard.integer(forKey: "highScore")
+        highScoreLabel.text = "High Score: \(lastHighScore)"
         
     }
 
