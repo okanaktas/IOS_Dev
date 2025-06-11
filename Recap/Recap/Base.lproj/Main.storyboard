@@ -48,8 +48,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ndw-jB-g33">
-                                <rect key="frame" x="76" y="198" width="245" height="150"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo.badge.plus" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Ndw-jB-g33">
+                                <rect key="frame" x="75.999999999999986" y="199.66666666666669" width="247.66666666666669" height="149.66666666666669"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="245" id="9bi-5x-Zcf"/>
                                     <constraint firstAttribute="width" constant="245" id="Cdd-9p-5pi"/>
@@ -133,6 +133,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="photo.badge.plus" catalog="system" width="128" height="97"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
