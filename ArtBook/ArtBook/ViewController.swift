@@ -48,27 +48,27 @@ class ViewController: UIViewController , UITableViewDelegate,UITableViewDataSour
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Paintings")
         /*
          Ne işe yarar?
-        Core Data varsayılan olarak, veri çekildiğinde "fault" adı verilen yer tutucular döner. Yani nesneler belleğe tam olarak yüklenmez, sadece ihtiyaç duyulduğunda (örneğin bir özelliğine erişildiğinde) yüklenir. Bu bellekten tasarruf sağlar.
-
-        returnsObjectsAsFaults = false dersen:
-
-        👉 Core Data, çektiğin tüm nesneleri tamamen belleğe yükler (eager loading).
-        👉 Yani, sonuçlar yer tutucu (fault) olarak değil, tam nesne olarak döner.
-
-        ✅ Ne zaman kullanılır?
-        Bu ayarı kullanmak isteyebileceğin bazı durumlar:
-
-        Tüm verileri hemen kullanacaksan, her defasında fault çözülmesini istemiyorsan.
-        Performans için verilerin toplu işlenmesi gerekiyorsa.
-        UI'da tüm özelliklere hemen erişmen gerekiyorsa.
-        ⚠️ Dikkat edilmesi gerekenler:
-        Belleğe çok sayıda nesne yüklenirse bellek kullanımı artar.
-        Büyük veri setlerinde bu ayar performansı olumsuz etkileyebilir.
+         Core Data varsayılan olarak, veri çekildiğinde "fault" adı verilen yer tutucular döner. Yani nesneler belleğe tam olarak yüklenmez, sadece ihtiyaç duyulduğunda (örneğin bir özelliğine erişildiğinde) yüklenir. Bu bellekten tasarruf sağlar.
+         
+         returnsObjectsAsFaults = false dersen:
+         
+         👉 Core Data, çektiğin tüm nesneleri tamamen belleğe yükler (eager loading).
+         👉 Yani, sonuçlar yer tutucu (fault) olarak değil, tam nesne olarak döner.
+         
+         ✅ Ne zaman kullanılır?
+         Bu ayarı kullanmak isteyebileceğin bazı durumlar:
+         
+         Tüm verileri hemen kullanacaksan, her defasında fault çözülmesini istemiyorsan.
+         Performans için verilerin toplu işlenmesi gerekiyorsa.
+         UI'da tüm özelliklere hemen erişmen gerekiyorsa.
+         ⚠️ Dikkat edilmesi gerekenler:
+         Belleğe çok sayıda nesne yüklenirse bellek kullanımı artar.
+         Büyük veri setlerinde bu ayar performansı olumsuz etkileyebilir.
          */
         fetchRequest.returnsObjectsAsFaults = false
         //Burada değerler gelecek ama bu gelen değerler bir dizi içerisinde gelecek bu yüzden results diye bir değişkene atadım ve dönen any tipindeki diziyi tek tek inceleyeceğim.
         do{
-         let results = try context.fetch(fetchRequest)
+            let results = try context.fetch(fetchRequest)
             //Burada NSManagedObject'e casting yapıyoruz ki çekilen değerleri tek tek ele alabileyim. NSManagedObject: Core Data’daki kayıtları temsil eder.
             if results.count > 0{
                 for result in results as! [NSManagedObject] {
@@ -115,7 +115,51 @@ class ViewController: UIViewController , UITableViewDelegate,UITableViewDataSour
             destinationVC.savedUUID = savedUUID
         }
     }
-
-
+    
+    //editingStyle kullanıcı delete mi ne yapıyor onu algılayıp gerekli işlemi yapıyoruz.
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath){
+        if editingStyle == .delete{
+            let appDelegete = UIApplication.shared.delegate as! AppDelegate
+            let context = appDelegete.persistentContainer.viewContext
+            
+            //veriyi silmek için önce çekip sonra siliyoruz
+            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Paintings")
+            
+            let idString = idArray[indexPath.row].uuidString
+            
+            fetchRequest.predicate = NSPredicate(format: "id == %@", idString)
+            
+            fetchRequest.returnsObjectsAsFaults = false
+            
+            do{
+                let results = try context.fetch(fetchRequest)
+                if results.count > 0{
+                    for result in results as! [NSManagedObject]{
+                        if let id = result.value(forKey: "id") as? UUID{
+                            if id == idArray[indexPath.row]{
+                                //coreData dan siliyoruz
+                                context.delete(result)
+                                nameArray.remove(at: indexPath.row)
+                                idArray.remove(at: indexPath.row)
+                                self.tableView.reloadData()
+                                
+                                do{
+                                    try context.save()
+                                }catch{
+                                    print("error")
+                                }
+                                //Aradığım şeyi bulup sildiysem halen dizinin tamamına bakmasına gerek yok. Break diyorum ve çıkıyorum. id üzerinden arama yapıyorum sorun olmaz ama id kullanamadığımız bir durum olursa name vs gibi o zaman break çok işe yarar
+                                break
+                            }
+                        }
+                    }
+                }
+            }catch{
+                print("error")
+            }
+        }
+    }
+    
+    
 }
 
