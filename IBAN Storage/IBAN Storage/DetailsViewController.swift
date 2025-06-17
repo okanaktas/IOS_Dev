@@ -17,8 +17,13 @@ class DetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let gesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
-        view.addGestureRecognizer(gesture)
+        imageView.isUserInteractionEnabled = true
+        
+        let gestureKeyboard = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        view.addGestureRecognizer(gestureKeyboard)
+        let gestureImage = UITapGestureRecognizer(target: self, action: #selector(tapImage))
+        view.addGestureRecognizer(gestureImage)
+        
         
         
         
@@ -31,6 +36,11 @@ class DetailsViewController: UIViewController {
     
     @objc func hideKeyboard(){
         view.endEditing(true)
+    }
+    
+    
+    @objc func tapImage(){
+        
     }
     
 }
