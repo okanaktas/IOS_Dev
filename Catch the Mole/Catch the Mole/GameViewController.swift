@@ -10,7 +10,6 @@ import UIKit
 class GameViewController: UIViewController {
     
     var counter : Int = 30
-    var score : Int = 0
     var randomNumber : Int = 0
     
     var highScore = 0

@@ -15,15 +15,16 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+     
         
-        navigationController?.navigationBar.topItem?.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.add, target: self, action: #selector(addImage))
+        navigationController?.navigationBar.topItem?.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTapped))
+        
+        
         
     }
-    
-    @objc func addImage(){
+
+    @objc func addTapped(){
         performSegue(withIdentifier: "toDetailsVC", sender: nil)
     }
-
-
 }
 
