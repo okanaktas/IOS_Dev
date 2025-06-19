@@ -2,7 +2,7 @@
 //  SceneDelegate.swift
 //  Recap
 //
-//  Created by Okan Aktas on 11.06.2025.
+//  Created by Bugra Okan Aktas on 19.06.2025.
 //
 
 import UIKit
