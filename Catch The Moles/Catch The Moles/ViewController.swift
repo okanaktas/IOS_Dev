@@ -6,11 +6,15 @@
 //
 
 import UIKit
+import CoreData
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
     var lastScore = 0
     var lastScoreList : [Int] = []
+    
+    var dataArray : [Int] = []
+    var idArray : [UUID] = []
     
 
     @IBOutlet weak var highScoreLabel: UILabel!
@@ -25,6 +29,32 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         lastScoreList = [lastScore]
         
+        getData()
+    
+    }
+    
+    func getData(){
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "LastScore")
+        fetchRequest.returnsObjectsAsFaults = false
+        
+        do{
+            let results = try context.fetch(fetchRequest)
+            
+            for result in results as! [NSManagedObject]{
+                if let lastScore = result.value(forKey: "score") as? Int{
+                    dataArray.append(lastScore)
+                }
+                if let id = result.value(forKey: "id") as? UUID{
+                    idArray.append(id)
+                }
+                self.tableView.reloadData()
+            }
+        }catch {
+            print("Error fetching data")
+        }
     }
 
 
@@ -34,14 +64,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        lastScoreList.count
+        dataArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         var context = cell.defaultContentConfiguration()
         context.image = UIImage(systemName: "person.circle")
-        context.text = "Player: \(lastScore)"
+        context.text = "Player: \(dataArray[indexPath.row])"
         cell.contentConfiguration = context
         return cell
     }
