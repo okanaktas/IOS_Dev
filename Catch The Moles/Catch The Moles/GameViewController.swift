@@ -46,6 +46,7 @@ class GameViewController: UIViewController {
             i.isUserInteractionEnabled = true
             let recognizer = UITapGestureRecognizer(target: self, action: #selector(moleTapped))
             i.addGestureRecognizer(recognizer)
+            i.isHidden = true
         }
         
         
@@ -58,11 +59,17 @@ class GameViewController: UIViewController {
         
         if counter == 0{
             timerForCounter.invalidate()
+            timerForMoles.invalidate()
         }
     }
     
     @objc func showMolesFunc(){
-        
+        for i in molesArray{
+            i.isHidden = true
+        }
+        var randomNumber = Int(arc4random_uniform(UInt32(molesArray.count)))
+        molesArray[randomNumber].isHidden = false
+     
     }
     
     @objc func moleTapped(){
