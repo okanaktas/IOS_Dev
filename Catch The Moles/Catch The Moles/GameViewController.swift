@@ -11,6 +11,9 @@ class GameViewController: UIViewController {
     
     var counter = 30
     var timerForCounter = Timer()
+    var timerForMoles = Timer()
+    
+    var molesArray : [UIImageView] = []
 
     @IBOutlet weak var counterLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
@@ -33,7 +36,12 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        molesArray = [imageViewMole0, imageViewMole1, imageViewMole2, imageViewMole3, imageViewMole4, imageViewMole5, imageViewMole6, imageViewMole7, imageViewMole8, imageViewMole9, imageViewMole10, imageViewMole11]
+        
         timerForCounter = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(counterFunc), userInfo: nil, repeats: true)
+        timerForMoles = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(showMolesFunc), userInfo: nil, repeats: true)
+        
+        
         
         
         
@@ -46,6 +54,10 @@ class GameViewController: UIViewController {
         if counter == 0{
             timerForCounter.invalidate()
         }
+    }
+    
+    @objc func showMolesFunc(){
+        
     }
 
 }
