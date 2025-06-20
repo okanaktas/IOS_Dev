@@ -37,6 +37,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="gray" title="Start Game"/>
+                                <connections>
+                                    <action selector="startGameButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bv7-HP-OlI"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -56,6 +59,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="GQ7-mF-wk1"/>
                     <connections>
+                        <outlet property="highScoreLabel" destination="clh-py-HiV" id="qkF-L9-4wG"/>
+                        <outlet property="tableView" destination="wEd-Md-HAA" id="cJR-tR-UAu"/>
                         <segue destination="nqm-CB-xWd" kind="show" identifier="toGameVC" id="X82-2v-zPB"/>
                     </connections>
                 </viewController>
@@ -138,6 +143,22 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="oh2-LF-8Iq"/>
+                    <connections>
+                        <outlet property="counterLabel" destination="hmh-fM-xzI" id="a9d-b2-pcI"/>
+                        <outlet property="imageViewMole0" destination="yAj-oU-vQw" id="PNW-m5-bxO"/>
+                        <outlet property="imageViewMole1" destination="FPX-o3-Ku4" id="Wjb-4Y-Paf"/>
+                        <outlet property="imageViewMole10" destination="xok-kq-g6m" id="0WG-VN-bAH"/>
+                        <outlet property="imageViewMole11" destination="Gz0-gW-ZTh" id="3tt-yf-bvq"/>
+                        <outlet property="imageViewMole2" destination="5Xo-0t-aLI" id="eZq-FP-YvG"/>
+                        <outlet property="imageViewMole3" destination="hD7-5W-fhv" id="PTC-uv-kw0"/>
+                        <outlet property="imageViewMole4" destination="YlL-W9-2L0" id="ePf-Ie-PlG"/>
+                        <outlet property="imageViewMole5" destination="iB8-zf-q2o" id="y2v-Eh-Llm"/>
+                        <outlet property="imageViewMole6" destination="hQ2-pl-FWt" id="hcO-Xf-pmF"/>
+                        <outlet property="imageViewMole7" destination="3Es-tb-tux" id="YZG-dZ-7Ls"/>
+                        <outlet property="imageViewMole8" destination="bOb-8A-lKh" id="7z1-l2-bN1"/>
+                        <outlet property="imageViewMole9" destination="thH-jJ-qb7" id="YmI-o5-Kj7"/>
+                        <outlet property="scoreLabel" destination="Uvg-HE-OEL" id="pUf-fi-I1w"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rKB-Wa-Pm6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

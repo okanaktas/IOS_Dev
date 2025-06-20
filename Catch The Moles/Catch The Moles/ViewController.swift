@@ -9,6 +9,10 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var highScoreLabel: UILabel!
+    @IBOutlet weak var tableView: UITableView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -17,5 +21,9 @@ class ViewController: UIViewController {
     }
 
 
+    @IBAction func startGameButton(_ sender: Any) {
+        performSegue(withIdentifier: "toGameVC", sender: nil)
+        
+    }
 }
 
