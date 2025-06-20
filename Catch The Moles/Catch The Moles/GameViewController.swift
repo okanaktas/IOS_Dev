@@ -33,10 +33,19 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        timerForCounter = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(counterFunc), userInfo: nil, repeats: true)
         
         
         
+    }
+    
+    @objc func counterFunc(){
+        counter -= 1
+        counterLabel.text = "Counter: \(counter)"
         
+        if counter == 0{
+            timerForCounter.invalidate()
+        }
     }
 
 }
