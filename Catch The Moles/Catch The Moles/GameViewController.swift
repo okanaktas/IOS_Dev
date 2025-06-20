@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class GameViewController: UIViewController {
     
@@ -63,6 +64,24 @@ class GameViewController: UIViewController {
             timerForCounter.invalidate()
             timerForMoles.invalidate()
             
+            //database
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            let context = appDelegate.persistentContainer.viewContext
+            
+            let data = NSEntityDescription.insertNewObject(forEntityName: "LastScore", into: context)
+            
+            //attributes
+            data.setValue(score, forKey: "score")
+            data.setValue(UUID(), forKey: "id")
+            
+            do{
+                try context.save()
+                print("Success")
+            }catch{
+                print("Error")
+            }
+            
+            
             let alert = UIAlertController(title: "Do You Wanna Play Again?", message: "Your score is \(score)", preferredStyle: .alert)
             let noButton = UIAlertAction(title: "No", style: UIAlertAction.Style.cancel) { UIAlertAction in
                 self.navigationController?.popViewController(animated: true)
@@ -82,6 +101,7 @@ class GameViewController: UIViewController {
             alert.addAction(noButton)
             alert.addAction(replayButton)
             self.present(alert, animated: true)
+            
         }
     }
     
