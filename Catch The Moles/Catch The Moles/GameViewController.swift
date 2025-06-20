@@ -10,6 +10,7 @@ import UIKit
 class GameViewController: UIViewController {
     
     var counter = 30
+    var score = 0
     var timerForCounter = Timer()
     var timerForMoles = Timer()
     
@@ -41,7 +42,11 @@ class GameViewController: UIViewController {
         timerForCounter = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(counterFunc), userInfo: nil, repeats: true)
         timerForMoles = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(showMolesFunc), userInfo: nil, repeats: true)
         
-        
+        for i in molesArray{
+            i.isUserInteractionEnabled = true
+            let recognizer = UITapGestureRecognizer(target: self, action: #selector(moleTapped))
+            i.addGestureRecognizer(recognizer)
+        }
         
         
         
@@ -58,6 +63,11 @@ class GameViewController: UIViewController {
     
     @objc func showMolesFunc(){
         
+    }
+    
+    @objc func moleTapped(){
+        score += 1
+        scoreLabel.text = "Score: \(score)"
     }
 
 }
