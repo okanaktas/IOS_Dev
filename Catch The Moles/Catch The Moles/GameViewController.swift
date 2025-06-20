@@ -15,7 +15,7 @@ class GameViewController: UIViewController {
     var timerForMoles = Timer()
     
     var molesArray : [UIImageView] = []
-
+    
     @IBOutlet weak var counterLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
     
@@ -69,6 +69,9 @@ class GameViewController: UIViewController {
                 self.counter = 30
                 self.score = 0
                 
+                self.counterLabel.text = "Counter: \(self.counter)"
+                self.scoreLabel.text = "Score: \(self.score)"
+                
                 self.timerForCounter = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.counterFunc), userInfo: nil, repeats: true)
                 self.timerForMoles = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(self.showMolesFunc), userInfo: nil, repeats: true)
                 
@@ -86,12 +89,12 @@ class GameViewController: UIViewController {
         }
         let randomNumber = Int(arc4random_uniform(UInt32(molesArray.count)))
         molesArray[randomNumber].isHidden = false
-     
+        
     }
     
     @objc func moleTapped(){
         score += 1
         scoreLabel.text = "Score: \(score)"
     }
-
+    
 }
