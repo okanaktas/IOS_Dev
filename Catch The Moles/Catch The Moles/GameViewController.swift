@@ -10,7 +10,7 @@ import CoreData
 
 class GameViewController: UIViewController {
     
-    var counter = 3
+    var counter = 30
     var score = 0
     var lastScore = 0
     
@@ -80,6 +80,8 @@ class GameViewController: UIViewController {
             }catch{
                 print("Error")
             }
+            
+            NotificationCenter.default.post(name: NSNotification.Name("updateHighScore"), object: nil)
             
             
             let alert = UIAlertController(title: "Do You Wanna Play Again?", message: "Your score is \(score)", preferredStyle: .alert)
