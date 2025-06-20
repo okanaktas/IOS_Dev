@@ -9,8 +9,8 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
-    var highScore = 0
-    var highScoreList : [Int] = []
+    var lastScore = 0
+    var lastScoreList : [Int] = []
     
 
     @IBOutlet weak var highScoreLabel: UILabel!
@@ -23,7 +23,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.delegate = self
         tableView.dataSource = self
         
-        highScoreList = [highScore]
+        lastScoreList = [lastScore]
         
     }
 
@@ -34,14 +34,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        highScoreList.count
+        lastScoreList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         var context = cell.defaultContentConfiguration()
         context.image = UIImage(systemName: "person.circle")
-        context.text = "Player: \(highScore)"
+        context.text = "Player: \(lastScore)"
         cell.contentConfiguration = context
         return cell
     }

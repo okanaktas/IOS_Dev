@@ -11,6 +11,8 @@ class GameViewController: UIViewController {
     
     var counter = 3
     var score = 0
+    var lastScore = 0
+    
     var timerForCounter = Timer()
     var timerForMoles = Timer()
     
