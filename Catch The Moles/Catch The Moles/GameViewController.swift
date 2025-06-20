@@ -9,7 +9,7 @@ import UIKit
 
 class GameViewController: UIViewController {
     
-    var counter = 30
+    var counter = 3
     var score = 0
     var timerForCounter = Timer()
     var timerForMoles = Timer()
@@ -60,6 +60,23 @@ class GameViewController: UIViewController {
         if counter == 0{
             timerForCounter.invalidate()
             timerForMoles.invalidate()
+            
+            let alert = UIAlertController(title: "Do You Wanna Play Again?", message: "Your score is \(score)", preferredStyle: .alert)
+            let noButton = UIAlertAction(title: "No", style: UIAlertAction.Style.cancel) { UIAlertAction in
+                self.navigationController?.popViewController(animated: true)
+            }
+            let replayButton = UIAlertAction(title: "Play Again", style: UIAlertAction.Style.default) { UIAlertAction in
+                self.counter = 30
+                self.score = 0
+                
+                self.timerForCounter = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.counterFunc), userInfo: nil, repeats: true)
+                self.timerForMoles = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(self.showMolesFunc), userInfo: nil, repeats: true)
+                
+                
+            }
+            alert.addAction(noButton)
+            alert.addAction(replayButton)
+            self.present(alert, animated: true)
         }
     }
     
@@ -67,7 +84,7 @@ class GameViewController: UIViewController {
         for i in molesArray{
             i.isHidden = true
         }
-        var randomNumber = Int(arc4random_uniform(UInt32(molesArray.count)))
+        let randomNumber = Int(arc4random_uniform(UInt32(molesArray.count)))
         molesArray[randomNumber].isHidden = false
      
     }
