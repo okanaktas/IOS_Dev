@@ -7,7 +7,11 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+    
+    var highScore = 0
+    var highScoreList : [Int] = []
+    
 
     @IBOutlet weak var highScoreLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
@@ -16,7 +20,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.delegate = self
+        tableView.dataSource = self
         
+        highScoreList = [highScore]
         
     }
 
@@ -24,6 +31,19 @@ class ViewController: UIViewController {
     @IBAction func startGameButton(_ sender: Any) {
         performSegue(withIdentifier: "toGameVC", sender: nil)
         
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        highScoreList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell()
+        var context = cell.defaultContentConfiguration()
+        context.image = UIImage(systemName: "person.circle")
+        context.text = "Player: \(highScore)"
+        cell.contentConfiguration = context
+        return cell
     }
 }
 
