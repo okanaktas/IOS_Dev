@@ -79,7 +79,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let cell = UITableViewCell()
         var context = cell.defaultContentConfiguration()
         context.image = UIImage(systemName: "person.circle")
-        context.text = "Player: \(dataArray[indexPath.row])"
+        context.text = "Player Score: \(dataArray[indexPath.row])"
         cell.contentConfiguration = context
         return cell
     }

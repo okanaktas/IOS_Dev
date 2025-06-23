@@ -7,32 +7,32 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		0BB437B62DF0B95800606418 /* Catch the Mole.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Catch the Mole.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0B684FB72E09ACB200332F46 /* CoreData - Art Book.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CoreData - Art Book.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		0BB437C82DF0B95A00606418 /* Exceptions for "Catch the Mole" folder in "Catch the Mole" target */ = {
+		0B684FCC2E09ACB300332F46 /* Exceptions for "CoreData - Art Book" folder in "CoreData - Art Book" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
 			);
-			target = 0BB437B52DF0B95800606418 /* Catch the Mole */;
+			target = 0B684FB62E09ACB200332F46 /* CoreData - Art Book */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		0BB437B82DF0B95800606418 /* Catch the Mole */ = {
+		0B684FB92E09ACB200332F46 /* CoreData - Art Book */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				0BB437C82DF0B95A00606418 /* Exceptions for "Catch the Mole" folder in "Catch the Mole" target */,
+				0B684FCC2E09ACB300332F46 /* Exceptions for "CoreData - Art Book" folder in "CoreData - Art Book" target */,
 			);
-			path = "Catch the Mole";
+			path = "CoreData - Art Book";
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		0BB437B32DF0B95800606418 /* Frameworks */ = {
+		0B684FB42E09ACB200332F46 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -42,18 +42,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0BB437AD2DF0B95800606418 = {
+		0B684FAE2E09ACB200332F46 = {
 			isa = PBXGroup;
 			children = (
-				0BB437B82DF0B95800606418 /* Catch the Mole */,
-				0BB437B72DF0B95800606418 /* Products */,
+				0B684FB92E09ACB200332F46 /* CoreData - Art Book */,
+				0B684FB82E09ACB200332F46 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		0BB437B72DF0B95800606418 /* Products */ = {
+		0B684FB82E09ACB200332F46 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0BB437B62DF0B95800606418 /* Catch the Mole.app */,
+				0B684FB72E09ACB200332F46 /* CoreData - Art Book.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -61,64 +61,64 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0BB437B52DF0B95800606418 /* Catch the Mole */ = {
+		0B684FB62E09ACB200332F46 /* CoreData - Art Book */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0BB437C92DF0B95A00606418 /* Build configuration list for PBXNativeTarget "Catch the Mole" */;
+			buildConfigurationList = 0B684FCD2E09ACB300332F46 /* Build configuration list for PBXNativeTarget "CoreData - Art Book" */;
 			buildPhases = (
-				0BB437B22DF0B95800606418 /* Sources */,
-				0BB437B32DF0B95800606418 /* Frameworks */,
-				0BB437B42DF0B95800606418 /* Resources */,
+				0B684FB32E09ACB200332F46 /* Sources */,
+				0B684FB42E09ACB200332F46 /* Frameworks */,
+				0B684FB52E09ACB200332F46 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				0BB437B82DF0B95800606418 /* Catch the Mole */,
+				0B684FB92E09ACB200332F46 /* CoreData - Art Book */,
 			);
-			name = "Catch the Mole";
+			name = "CoreData - Art Book";
 			packageProductDependencies = (
 			);
-			productName = "Catch the Mole";
-			productReference = 0BB437B62DF0B95800606418 /* Catch the Mole.app */;
+			productName = "CoreData - Art Book";
+			productReference = 0B684FB72E09ACB200332F46 /* CoreData - Art Book.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		0BB437AE2DF0B95800606418 /* Project object */ = {
+		0B684FAF2E09ACB200332F46 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1640;
 				LastUpgradeCheck = 1640;
 				TargetAttributes = {
-					0BB437B52DF0B95800606418 = {
+					0B684FB62E09ACB200332F46 = {
 						CreatedOnToolsVersion = 16.4;
 					};
 				};
 			};
-			buildConfigurationList = 0BB437B12DF0B95800606418 /* Build configuration list for PBXProject "Catch the Mole" */;
+			buildConfigurationList = 0B684FB22E09ACB200332F46 /* Build configuration list for PBXProject "CoreData - Art Book" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = 0BB437AD2DF0B95800606418;
+			mainGroup = 0B684FAE2E09ACB200332F46;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = 0BB437B72DF0B95800606418 /* Products */;
+			productRefGroup = 0B684FB82E09ACB200332F46 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0BB437B52DF0B95800606418 /* Catch the Mole */,
+				0B684FB62E09ACB200332F46 /* CoreData - Art Book */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		0BB437B42DF0B95800606418 /* Resources */ = {
+		0B684FB52E09ACB200332F46 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -128,7 +128,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		0BB437B22DF0B95800606418 /* Sources */ = {
+		0B684FB32E09ACB200332F46 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -138,16 +138,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		0BB437CA2DF0B95A00606418 /* Debug */ = {
+		0B684FCE2E09ACB300332F46 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = RF7TP92N6Q;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Catch the Mole/Info.plist";
+				INFOPLIST_FILE = "CoreData - Art Book/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -158,7 +157,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.okanaktas.Catch-the-Mole";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.okanaktas.CoreData---Art-Book";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -166,16 +165,15 @@
 			};
 			name = Debug;
 		};
-		0BB437CB2DF0B95A00606418 /* Release */ = {
+		0B684FCF2E09ACB300332F46 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = RF7TP92N6Q;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Catch the Mole/Info.plist";
+				INFOPLIST_FILE = "CoreData - Art Book/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -186,7 +184,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.okanaktas.Catch-the-Mole";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.okanaktas.CoreData---Art-Book";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -194,7 +192,7 @@
 			};
 			name = Release;
 		};
-		0BB437CC2DF0B95A00606418 /* Debug */ = {
+		0B684FD02E09ACB300332F46 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -229,7 +227,6 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = RF7TP92N6Q;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -258,7 +255,7 @@
 			};
 			name = Debug;
 		};
-		0BB437CD2DF0B95A00606418 /* Release */ = {
+		0B684FD12E09ACB300332F46 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -293,7 +290,6 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = RF7TP92N6Q;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -318,25 +314,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0BB437B12DF0B95800606418 /* Build configuration list for PBXProject "Catch the Mole" */ = {
+		0B684FB22E09ACB200332F46 /* Build configuration list for PBXProject "CoreData - Art Book" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0BB437CC2DF0B95A00606418 /* Debug */,
-				0BB437CD2DF0B95A00606418 /* Release */,
+				0B684FD02E09ACB300332F46 /* Debug */,
+				0B684FD12E09ACB300332F46 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0BB437C92DF0B95A00606418 /* Build configuration list for PBXNativeTarget "Catch the Mole" */ = {
+		0B684FCD2E09ACB300332F46 /* Build configuration list for PBXNativeTarget "CoreData - Art Book" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0BB437CA2DF0B95A00606418 /* Debug */,
-				0BB437CB2DF0B95A00606418 /* Release */,
+				0B684FCE2E09ACB300332F46 /* Debug */,
+				0B684FCF2E09ACB300332F46 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 0BB437AE2DF0B95800606418 /* Project object */;
+	rootObject = 0B684FAF2E09ACB200332F46 /* Project object */;
 }
