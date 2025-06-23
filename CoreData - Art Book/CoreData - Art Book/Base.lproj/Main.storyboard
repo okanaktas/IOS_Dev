@@ -36,6 +36,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="8Z8-ZM-G9I"/>
                     <connections>
+                        <outlet property="tableView" destination="tUE-Oh-hoG" id="DDP-xm-lSA"/>
                         <segue destination="3nh-pD-Xei" kind="show" identifier="toDetailsVC" id="FSV-MU-SJV"/>
                     </connections>
                 </viewController>
@@ -43,15 +44,15 @@
             </objects>
             <point key="canvasLocation" x="953.43511450381675" y="-27.464788732394368"/>
         </scene>
-        <!--View Controller-->
+        <!--Details View Controller-->
         <scene sceneID="NX1-Ju-BNc">
             <objects>
-                <viewController id="3nh-pD-Xei" sceneMemberID="viewController">
+                <viewController id="3nh-pD-Xei" customClass="DetailsViewController" customModule="CoreData___Art_Book" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="z1j-P9-F9e">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lfR-ef-Bn2">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="photo.badge.plus" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="lfR-ef-Bn2">
                                 <rect key="frame" x="76" y="162" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -78,12 +79,21 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Save"/>
+                                <connections>
+                                    <action selector="saveButton:" destination="3nh-pD-Xei" eventType="touchUpInside" id="kMI-QQ-GqF"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="rwn-Tu-SwX"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="tDh-tz-yzn"/>
+                    <connections>
+                        <outlet property="artistText" destination="yHH-KE-M5P" id="uoT-Dd-sJc"/>
+                        <outlet property="imageView" destination="lfR-ef-Bn2" id="qPa-IB-OI9"/>
+                        <outlet property="nameText" destination="m3g-mK-h55" id="ypH-zC-Iet"/>
+                        <outlet property="yearText" destination="tbB-GS-bxQ" id="KPb-TB-YP9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8jD-od-h7h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -109,6 +119,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="photo.badge.plus" catalog="system" width="128" height="97"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
