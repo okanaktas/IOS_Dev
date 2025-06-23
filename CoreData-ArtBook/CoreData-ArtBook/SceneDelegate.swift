@@ -1,6 +1,6 @@
 //
 //  SceneDelegate.swift
-//  CoreData - Art Book
+//  CoreData-ArtBook
 //
 //  Created by Bugra Okan Aktas on 23.06.2025.
 //

@@ -7,32 +7,32 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		0B684FB72E09ACB200332F46 /* CoreData - Art Book.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CoreData - Art Book.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0B266C762E09D37D009D2BCF /* CoreData-ArtBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CoreData-ArtBook.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		0B684FCC2E09ACB300332F46 /* Exceptions for "CoreData - Art Book" folder in "CoreData - Art Book" target */ = {
+		0B266C8B2E09D37E009D2BCF /* Exceptions for "CoreData-ArtBook" folder in "CoreData-ArtBook" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
 			);
-			target = 0B684FB62E09ACB200332F46 /* CoreData - Art Book */;
+			target = 0B266C752E09D37D009D2BCF /* CoreData-ArtBook */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		0B684FB92E09ACB200332F46 /* CoreData - Art Book */ = {
+		0B266C782E09D37D009D2BCF /* CoreData-ArtBook */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				0B684FCC2E09ACB300332F46 /* Exceptions for "CoreData - Art Book" folder in "CoreData - Art Book" target */,
+				0B266C8B2E09D37E009D2BCF /* Exceptions for "CoreData-ArtBook" folder in "CoreData-ArtBook" target */,
 			);
-			path = "CoreData - Art Book";
+			path = "CoreData-ArtBook";
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		0B684FB42E09ACB200332F46 /* Frameworks */ = {
+		0B266C732E09D37D009D2BCF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -42,18 +42,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0B684FAE2E09ACB200332F46 = {
+		0B266C6D2E09D37D009D2BCF = {
 			isa = PBXGroup;
 			children = (
-				0B684FB92E09ACB200332F46 /* CoreData - Art Book */,
-				0B684FB82E09ACB200332F46 /* Products */,
+				0B266C782E09D37D009D2BCF /* CoreData-ArtBook */,
+				0B266C772E09D37D009D2BCF /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		0B684FB82E09ACB200332F46 /* Products */ = {
+		0B266C772E09D37D009D2BCF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0B684FB72E09ACB200332F46 /* CoreData - Art Book.app */,
+				0B266C762E09D37D009D2BCF /* CoreData-ArtBook.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -61,64 +61,64 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0B684FB62E09ACB200332F46 /* CoreData - Art Book */ = {
+		0B266C752E09D37D009D2BCF /* CoreData-ArtBook */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0B684FCD2E09ACB300332F46 /* Build configuration list for PBXNativeTarget "CoreData - Art Book" */;
+			buildConfigurationList = 0B266C8C2E09D37E009D2BCF /* Build configuration list for PBXNativeTarget "CoreData-ArtBook" */;
 			buildPhases = (
-				0B684FB32E09ACB200332F46 /* Sources */,
-				0B684FB42E09ACB200332F46 /* Frameworks */,
-				0B684FB52E09ACB200332F46 /* Resources */,
+				0B266C722E09D37D009D2BCF /* Sources */,
+				0B266C732E09D37D009D2BCF /* Frameworks */,
+				0B266C742E09D37D009D2BCF /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				0B684FB92E09ACB200332F46 /* CoreData - Art Book */,
+				0B266C782E09D37D009D2BCF /* CoreData-ArtBook */,
 			);
-			name = "CoreData - Art Book";
+			name = "CoreData-ArtBook";
 			packageProductDependencies = (
 			);
-			productName = "CoreData - Art Book";
-			productReference = 0B684FB72E09ACB200332F46 /* CoreData - Art Book.app */;
+			productName = "CoreData-ArtBook";
+			productReference = 0B266C762E09D37D009D2BCF /* CoreData-ArtBook.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		0B684FAF2E09ACB200332F46 /* Project object */ = {
+		0B266C6E2E09D37D009D2BCF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1640;
 				LastUpgradeCheck = 1640;
 				TargetAttributes = {
-					0B684FB62E09ACB200332F46 = {
+					0B266C752E09D37D009D2BCF = {
 						CreatedOnToolsVersion = 16.4;
 					};
 				};
 			};
-			buildConfigurationList = 0B684FB22E09ACB200332F46 /* Build configuration list for PBXProject "CoreData - Art Book" */;
+			buildConfigurationList = 0B266C712E09D37D009D2BCF /* Build configuration list for PBXProject "CoreData-ArtBook" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = 0B684FAE2E09ACB200332F46;
+			mainGroup = 0B266C6D2E09D37D009D2BCF;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = 0B684FB82E09ACB200332F46 /* Products */;
+			productRefGroup = 0B266C772E09D37D009D2BCF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0B684FB62E09ACB200332F46 /* CoreData - Art Book */,
+				0B266C752E09D37D009D2BCF /* CoreData-ArtBook */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		0B684FB52E09ACB200332F46 /* Resources */ = {
+		0B266C742E09D37D009D2BCF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -128,7 +128,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		0B684FB32E09ACB200332F46 /* Sources */ = {
+		0B266C722E09D37D009D2BCF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -138,7 +138,7 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		0B684FCE2E09ACB300332F46 /* Debug */ = {
+		0B266C8D2E09D37E009D2BCF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -146,7 +146,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "CoreData - Art Book/Info.plist";
+				INFOPLIST_FILE = "CoreData-ArtBook/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -157,7 +157,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.okanaktas.CoreData---Art-Book";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.okanaktas.CoreData-ArtBook";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -165,7 +165,7 @@
 			};
 			name = Debug;
 		};
-		0B684FCF2E09ACB300332F46 /* Release */ = {
+		0B266C8E2E09D37E009D2BCF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -173,7 +173,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "CoreData - Art Book/Info.plist";
+				INFOPLIST_FILE = "CoreData-ArtBook/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -184,7 +184,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.okanaktas.CoreData---Art-Book";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.okanaktas.CoreData-ArtBook";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -192,7 +192,7 @@
 			};
 			name = Release;
 		};
-		0B684FD02E09ACB300332F46 /* Debug */ = {
+		0B266C8F2E09D37E009D2BCF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -255,7 +255,7 @@
 			};
 			name = Debug;
 		};
-		0B684FD12E09ACB300332F46 /* Release */ = {
+		0B266C902E09D37E009D2BCF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -314,25 +314,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0B684FB22E09ACB200332F46 /* Build configuration list for PBXProject "CoreData - Art Book" */ = {
+		0B266C712E09D37D009D2BCF /* Build configuration list for PBXProject "CoreData-ArtBook" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0B684FD02E09ACB300332F46 /* Debug */,
-				0B684FD12E09ACB300332F46 /* Release */,
+				0B266C8F2E09D37E009D2BCF /* Debug */,
+				0B266C902E09D37E009D2BCF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0B684FCD2E09ACB300332F46 /* Build configuration list for PBXNativeTarget "CoreData - Art Book" */ = {
+		0B266C8C2E09D37E009D2BCF /* Build configuration list for PBXNativeTarget "CoreData-ArtBook" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0B684FCE2E09ACB300332F46 /* Debug */,
-				0B684FCF2E09ACB300332F46 /* Release */,
+				0B266C8D2E09D37E009D2BCF /* Debug */,
+				0B266C8E2E09D37E009D2BCF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 0B684FAF2E09ACB200332F46 /* Project object */;
+	rootObject = 0B266C6E2E09D37D009D2BCF /* Project object */;
 }
