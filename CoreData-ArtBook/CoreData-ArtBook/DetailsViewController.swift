@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class DetailsViewController: UIViewController ,UIImagePickerControllerDelegate,UINavigationControllerDelegate{
     
@@ -31,6 +32,32 @@ class DetailsViewController: UIViewController ,UIImagePickerControllerDelegate,U
     
     
     @IBAction func saveButton(_ sender: Any) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        
+        let newPainting  = NSEntityDescription.insertNewObject(forEntityName: "Paintings", into: context)
+        
+        //Attributes
+        newPainting.setValue(nameText.text, forKey: "nameText")
+        newPainting.setValue(artistText.text, forKey: "artistText")
+        
+        if let year = Int(yearText.text!){
+            newPainting.setValue(year, forKey: "yearText")
+        }
+        
+        newPainting.setValue(UUID(), forKey: "id")
+        //görseli dataya çevirip, görseli sıkıştırma oranı
+        let data = imageView.image?.jpegData(compressionQuality: 0.8)!
+        newPainting.setValue(data, forKey: "imageView")
+        
+        do{
+            try context.save()
+            print("Success")
+        }catch{
+            print("Error!")
+        }
+        
     }
     
     @objc func hideKeyboard(){
